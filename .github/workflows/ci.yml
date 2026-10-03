@@ -1,0 +1,7 @@
+name: ci
+on: [push, workflow_dispatch]
+jobs:
+  fail:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "sha=$GITHUB_SHA run=$GITHUB_RUN_ID attempt=$GITHUB_RUN_ATTEMPT"; exit 1
